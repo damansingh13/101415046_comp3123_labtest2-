@@ -1,0 +1,255 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  transition: background-color 1s ease, background-image 1s ease;
+}
+
+/* Weather Backgrounds Based on Conditions */
+.clear {
+  background-color: #ffeb3b; /* Bright sunny color */
+  background-image: url('https://www.w3schools.com/w3images/sunny.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.rain {
+  background-color: #81c784; /* Light rainy green */
+  background-image: url('https://www.w3schools.com/w3images/rainy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.clouds {
+  background-color: #b0bec5; /* Cloudy gray */
+  background-image: url('https://www.w3schools.com/w3images/cloudy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.snow {
+  background-color: #90caf9; /* Light snowy blue */
+  background-image: url('https://www.w3schools.com/w3images/snowy.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Weather App Container */
+.weather-app {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 500px;
+  max-width: 95%;
+  min-width: 400px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  backdrop-filter: blur(10px);
+}
+
+/* Hover Effect for Weather App */
+.weather-app:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 32px; /* Larger font for the title */
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+/* Search Box */
+input {
+  padding: 12px;
+  width: 100%;
+  max-width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Search Button */
+button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0 0 15px rgba(0, 128, 0, 0.2);
+}
+
+button:active {
+  background-color: #388e3c;
+  transform: scale(0.98);
+}
+
+/* Weather Card */
+.weather-card {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Weather Card */
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h2 {
+  font-size: 26px; /* Increased font size for city name */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.weather-card p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Weather Icon */
+.weather-card img {
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Error Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Animations for the App */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.weather-card, .weather-app {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Mobile First Approach */
+.weather-app {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+}
+
+/* Tablet Layout (Min-width 600px) */
+@media (min-width: 600px) {
+  .weather-app {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  input {
+    padding: 12px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+/* Desktop Layout (Min-width 1024px) */
+@media (min-width: 1024px) {
+  .weather-app {
+    width: 60%;
+    max-width: 600px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  input {
+    padding: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+  }
+}
